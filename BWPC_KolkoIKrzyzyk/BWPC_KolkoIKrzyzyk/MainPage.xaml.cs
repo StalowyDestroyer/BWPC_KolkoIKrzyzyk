@@ -54,6 +54,8 @@ namespace BWPC_KolkoIKrzyzyk
                                 ClassId = "enabled",
                                 BorderColor = Color.White,
                             };
+                            Grid.SetRow (button, k);
+                            Grid.SetColumn (button, l);
                             button.Clicked += Move;
                             grid.Children.Add(button);
                         }
