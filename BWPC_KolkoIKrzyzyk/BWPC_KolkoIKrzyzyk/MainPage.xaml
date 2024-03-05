@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BWPC_KolkoIKrzyzyk.MainPage">
-    <StackLayout BackgroundColor="Black">
-        <Label Text="Kolejka: " FontSize="30" Margin="50" TextColor="Gold" HorizontalOptions="Center" x:Name="TurnLabel"></Label>
-        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" x:Name="MainGrid"></Grid>
-        <Button Text="Restart" Clicked="Restart" VerticalOptions="EndAndExpand" BackgroundColor="Black" BorderColor="Gold" TextColor="Gold" BorderWidth="1" Margin="20"></Button>
-    </StackLayout>
+    <Frame BackgroundColor="Gold" Padding="2">
+        <StackLayout BackgroundColor="Black">
+            <Label Text="Kolejka: x" FontSize="30" Margin="50" TextColor="Gold" HorizontalOptions="Center" x:Name="TurnLabel"></Label>
+            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" x:Name="MainGrid"></Grid>
+            <Button Text="Restart" Clicked="Restart" VerticalOptions="EndAndExpand" BackgroundColor="Black" BorderColor="Gold" TextColor="Gold" BorderWidth="1" Margin="20"></Button>
+        </StackLayout>
+    </Frame>
 </ContentPage>
