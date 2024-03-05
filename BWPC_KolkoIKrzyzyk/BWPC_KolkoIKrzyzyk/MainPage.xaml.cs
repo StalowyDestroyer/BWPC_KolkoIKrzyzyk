@@ -93,6 +93,16 @@ namespace BWPC_KolkoIKrzyzyk
             }
         }
 
+        private void EnableGrid(int gridToEnable)
+        {
+            ((Grid)MainGrid.Children[gridToEnable]).BackgroundColor = Color.LightGray;
+            foreach(Button button in ((Grid)MainGrid.Children[gridToEnable]).Children)
+            {
+                if(string.IsNullOrEmpty(button.Text))
+                    button.ClassId = "enabled";
+            }
+        }
+
         private void Restart(object sender, EventArgs e)
         {
 
