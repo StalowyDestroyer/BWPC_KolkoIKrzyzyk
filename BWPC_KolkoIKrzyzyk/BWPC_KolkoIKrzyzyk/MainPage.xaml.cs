@@ -20,5 +20,12 @@ namespace BWPC_KolkoIKrzyzyk
         {
 
         }
+        private void DisplayWin()
+        {
+            if (turn)
+                DisplayAlert("Koniec gry!", "Wygrywa x!", "OK");
+            else
+                DisplayAlert("Koniec gry!", "Wygrywa o!", "OK");
+        }
     }
 }
