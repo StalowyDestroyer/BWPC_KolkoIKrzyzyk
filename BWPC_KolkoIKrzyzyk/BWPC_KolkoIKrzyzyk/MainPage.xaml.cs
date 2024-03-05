@@ -14,6 +14,7 @@ namespace BWPC_KolkoIKrzyzyk
         public MainPage()
         {
             InitializeComponent();
+            CreateBoard();
         }
 
         private void CreateBoard()
@@ -105,7 +106,7 @@ namespace BWPC_KolkoIKrzyzyk
 
         private void Restart(object sender, EventArgs e)
         {
-
+            CreateBoard();
         }
     }
 }
