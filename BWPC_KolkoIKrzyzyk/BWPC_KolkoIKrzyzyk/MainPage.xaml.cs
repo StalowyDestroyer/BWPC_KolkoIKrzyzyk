@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -122,6 +123,8 @@ namespace BWPC_KolkoIKrzyzyk
 
         private bool CheckForWin(Grid grid)
         {
+            bool win = false;
+
             List<Button> buttons = new List<Button>();
             foreach (Button button in grid.Children)
                 buttons.Add(button);
@@ -130,27 +133,45 @@ namespace BWPC_KolkoIKrzyzyk
             {
                 if (buttons[i].Text == buttons[i + 3].Text && buttons[i + 3].Text == buttons[i + 6].Text && !string.IsNullOrEmpty(buttons[i].Text))
                 {
+                    buttons[i].BackgroundColor = Color.Gold;
+                    buttons[i+3].BackgroundColor = Color.Gold;
+                    buttons[i+6].BackgroundColor = Color.Gold;
+
                     DisplayWin();
-                    return true;
+                    win=true;
                 }
                 if (buttons[i*3].Text == buttons[i *3+1].Text && buttons[i *3+1].Text == buttons[i *3+2].Text && !string.IsNullOrEmpty(buttons[i*3].Text))
                 {
+                    buttons[i*3].BackgroundColor = Color.Gold;
+                    buttons[i*3+1].BackgroundColor = Color.Gold;
+                    buttons[i*3+2].BackgroundColor = Color.Gold;
+
                     DisplayWin();
-                    return true;
+                    win = true;
+
                 }
             }
             if (buttons[0].Text == buttons[4].Text && buttons[4].Text == buttons[8].Text && !string.IsNullOrEmpty(buttons[4].Text))
             {
+                buttons[0].BackgroundColor = Color.Gold;
+                buttons[4].BackgroundColor = Color.Gold;
+                buttons[8].BackgroundColor = Color.Gold;
+
                 DisplayWin();
-                return true;
+                win = true;
+
             }
             if (buttons[2].Text == buttons[4].Text && buttons[4].Text == buttons[6].Text && !string.IsNullOrEmpty(buttons[4].Text))
             {
+                buttons[2].BackgroundColor = Color.Gold;
+                buttons[4].BackgroundColor = Color.Gold;
+                buttons[6].BackgroundColor = Color.Gold;
+
                 DisplayWin();
-                return true;
+                win = true;
+
             }
-            return false;
-            
+            return win;
         }
         private void DisableAll()
         {
