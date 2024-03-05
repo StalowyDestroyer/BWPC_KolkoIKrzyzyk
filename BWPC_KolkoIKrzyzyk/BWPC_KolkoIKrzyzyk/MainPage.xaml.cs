@@ -53,6 +53,12 @@ namespace BWPC_KolkoIKrzyzyk
             return false;
             
         }
+        private void DisableAll()
+        {
+            foreach (Grid grid in MainGrid.Children)
+                foreach (Button button in grid.Children)
+                    button.ClassId = "disabled";
+        }
         private void DisplayWin()
         {
             if (turn)
