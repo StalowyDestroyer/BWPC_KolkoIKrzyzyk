@@ -27,5 +27,14 @@ namespace BWPC_KolkoIKrzyzyk
             else
                 DisplayAlert("Koniec gry!", "Wygrywa o!", "OK");
         }
+        private void ChangeTurn()
+        {
+            turn = !turn;
+            if (turn)
+                TurnLabel.Text = "Kolejka: x";
+            else
+                TurnLabel.Text = "Kolejka: o";
+
+        }
     }
 }
