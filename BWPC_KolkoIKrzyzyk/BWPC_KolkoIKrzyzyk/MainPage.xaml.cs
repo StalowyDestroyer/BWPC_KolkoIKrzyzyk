@@ -22,8 +22,6 @@ namespace BWPC_KolkoIKrzyzyk
             MainGrid.Children.Clear();
             MainGrid.RowSpacing = 0;
             MainGrid.ColumnSpacing = 0;
-            turn = true;
-            TurnLabel.Text = "Kolejka: x";
 
             for(int i = 0; i < 3; i++)
             {
@@ -53,6 +51,7 @@ namespace BWPC_KolkoIKrzyzyk
                                 Margin = new Thickness(1),
                                 ClassId = "enabled",
                                 BorderColor = Color.White,
+                                BackgroundColor = Color.Gray,
                             };
                             Grid.SetRow (button, k);
                             Grid.SetColumn (button, l);
@@ -98,7 +97,7 @@ namespace BWPC_KolkoIKrzyzyk
 
         private void EnableGrid(int gridToEnable)
         {
-            ((Grid)MainGrid.Children[gridToEnable]).BackgroundColor = Color.LightGray;
+            ((Grid)MainGrid.Children[gridToEnable]).BackgroundColor = Color.Gold;
             foreach(Button button in ((Grid)MainGrid.Children[gridToEnable]).Children)
             {
                 if(string.IsNullOrEmpty(button.Text))
@@ -108,7 +107,17 @@ namespace BWPC_KolkoIKrzyzyk
 
         private void Restart(object sender, EventArgs e)
         {
-            CreateBoard();
+            turn = true;
+            TurnLabel.Text = "Kolejka: x";
+            foreach(Grid grid in MainGrid.Children)
+            {
+                foreach(Button button in grid.Children)
+                {
+                    button.ClassId = "enabled";
+                    button.Text = "";
+                    button.BackgroundColor = Color.Gray;
+                }
+            }
         }
 
         private bool CheckForWin(Grid grid)
